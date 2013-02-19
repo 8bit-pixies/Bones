@@ -1,5 +1,9 @@
-{{title}}
+{{files['title']}}
 
-{{content}}
+{{files['content']}}
 
-<a href="./index.html">Return to Index</a>
+{% for tag in files['tags'] %}
+  {{tag}}  
+{% endfor %}<br>
+
+<a href="./index.html">Return to Index</a> <a href="./tags.html">tags</a>
