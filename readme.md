@@ -23,16 +23,12 @@ Change these settings:
 ### SOURCE:
 Location of source files for entries
 Must end in slash.  
-Example: SOURCE = "./blog/" 
+Example: SOURCE = "./_post/" 
 
 ### DESTINATION:
 Location to place generated files.
 Must end in slash.
-Example: DESTINATION = "./explort/"
-
-### HOME_SHOW:
-Number of entries to show on homepage
-Example: HOME_SHOW = 15
+Example: DESTINATION = "./_site/"
 
 ### TEMPLATE_PATH:
 Path to folder where tempaltes live.
