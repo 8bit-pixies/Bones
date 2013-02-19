@@ -12,8 +12,9 @@ $ python bones.py
 
 sample.markdown:
 
-> 	First Line is the Wiki's Category  
-> 	(a blank line separates Category from post body)
+> 	First Line is the Wiki's Category 
+>       Second Line is associate Tags
+> 	(a blank line separates the above from post body)
 >   This is the body of the post. It will be evaluated with `markdown`
 
 # Settings 
