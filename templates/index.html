@@ -1,0 +1,7 @@
+{% for cats in category %}
+<h1> {{cats}} </h1><ul>
+	{% for posts in category[cats] %}
+	<li><a href="./{{posts['filename']}}.html">{{posts['title']}}</a></li>
+	{% endfor %}
+	</ul>
+{% endfor %}
