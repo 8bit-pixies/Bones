@@ -1,5 +1,5 @@
-import os
-import markdown, jinja2
+import os,re
+import markdown, jinja2, yaml
 
 SOURCE = "./_posts"
 DESTINATION = "./_site/"
@@ -17,18 +17,24 @@ def get_tree(source):
             if filename[0] == ".": continue
             print '\t%s'% filename
             path = os.path.join(root,filename)
-            f = open(path,'rU')
-            category = f.readline().strip()
-            tags = f.readline().strip()
-
+            f = open(path,'rU').read()
+            m = re.search("(?:-+)([^-]*)(?:-+)(.*)",f,re.DOTALL)
+            labels = yaml.safe_load(m.group(1).strip())
+            content = m.group(2).strip()
+            #fix up tags incase it is empty (since it is optional)
+            try:
+                 tags = [x.strip() for x in labels['tags'].split(',')]
+            except AttributeError:
+                tags = []
+            except KeyError:
+                tags = []
             file_list.append({
-                'category': category,
-                'tags': [x.strip() for x in tags.split(',')],
+                'category': labels['category'],
+                'tags': tags,
                 'filename': filename.split('.')[0],
                 'title': ' '.join([x.title() for x in filename.split('.')[0].split('-')]),
-                'content': markdown.markdown(''.join(f.readlines()[1:]).decode('UTF-8'))
+                'content': markdown.markdown(content).decode('UTF-8')
             })
-            f.close()
 
     return file_list
 
@@ -52,7 +58,6 @@ def get_label(f):
             'filename':files['filename'],
             'title':files['title']
         })
-        print files['filename']
     return categories
 
 def get_tags(f):
@@ -76,7 +81,6 @@ def generate_index(f, e):
     template = e.get_template(TEMPLATES['index'])
     print "\tindex.html"
     categories = get_label(f)
-    print categories
     write_file("index.html", template.render(category=categories))
 
 def generate_tags(f,e):

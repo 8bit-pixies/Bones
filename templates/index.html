@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<head>
+    <title>Index</title>
+
+</head>
+<body>
+
+<div class="container">
+
+
 {% for cats in category %}
 <h1> {{cats}} </h1><ul>
 	{% for posts in category[cats] %}
@@ -5,3 +15,8 @@
 	{% endfor %}
 	</ul>
 {% endfor %}
+
+</div>
+
+</body>
+</head>

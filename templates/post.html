@@ -1,4 +1,21 @@
-{{files['title']}}
+
+<!DOCTYPE html>
+<head>
+    <title>{{files['title']}}</title>
+
+</head>
+<body>
+
+<div class="container">
+	<header></header>
+		<div class="three columns sidebar">
+			<nav>
+				<div id="toc"></div>
+			</nav>
+			&nbsp;
+		</div>
+		<div class="twelve columns offset-by-one content">
+			<div class="doc-section">
 
 {{files['content']}}
 
@@ -7,3 +24,8 @@
 {% endfor %}<br>
 
 <a href="./index.html">Return to Index</a> <a href="./tags.html">tags</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
