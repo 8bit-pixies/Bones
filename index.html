@@ -6,7 +6,6 @@
     <title>Bones by chappers</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -28,7 +27,7 @@
         </ul>
       </header>
       <section>
-        <h3>Bones</h3>
+<h1 id="bones">Bones</h1>
 
 <p><strong>Chapman Siu</strong></p>
 
@@ -42,13 +41,13 @@
 
 <p>sample.markdown:</p>
 
-<blockquote><pre>
-First Line is the Wiki's Category  
-Second Line is associate Tags  
-(a blank line separates Category from post body)
+<pre><code>---
+category : category1
+tags : tag1,tag2
+---
 
-This is the body of the post. It will be evaluated with markdown
-</pre></blockquote>
+Markdown Content here.
+</code></pre>
 
 <h1 id="settings">Settings</h1>
 
@@ -58,19 +57,19 @@ This is the body of the post. It will be evaluated with markdown
 
 <p>Location of source files for entries
 Must end in slash. <br />
-Example: `SOURCE = "./_post/"` </p>
+Example: SOURCE = "./_post/" </p>
 
 <h3 id="destination">DESTINATION:</h3>
 
 <p>Location to place generated files.
 Must end in slash.
-Example: `DESTINATION = "./_site/"`</p>
+Example: DESTINATION = "./_site/"</p>
 
 <h3 id="template_path">TEMPLATE_PATH:</h3>
 
 <p>Path to folder where tempaltes live.
 Must end in slash.
-Example: `TEMPLATE_PATH = "./templates/"` </p>
+Example: TEMPLATE_PATH = "./templates/" </p>
 
 <h3 id="template_options">TEMPLATE_OPTIONS:</h3>
 
@@ -81,11 +80,13 @@ Default: TEMPLATE_OPTIONS = {}</p>
 
 <p>Dictionary of templates. <br />
 Required keys: 'index', 'post'.
-Example: <pre>
-        TEMPLATES = {
-            'index': "index.html",
-            'post': "post.html",
-        }</pre></p>
+Example: </p>
+
+<pre><code>TEMPLATES = {
+    'index': "index.html",
+    'post': "post.html",
+}
+</code></pre>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://chappers.github.com/">chappers</a></p>
