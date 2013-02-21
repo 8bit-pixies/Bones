@@ -46,7 +46,8 @@ Default: TEMPLATE_OPTIONS = {}
 Dictionary of templates.  
 Required keys: 'index', 'post'.
 Example: 
-        TEMPLATES = {
-            'index': "index.html",
-            'post': "post.html",
-        }
+
+    TEMPLATES = {
+        'index': "index.html",
+        'post': "post.html",
+    }
